@@ -636,9 +636,10 @@
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			border-color: #ff7496;
-			color: #ff7496 !important;
+			border-color: ##FBFBFB;
+			color: #FBFBFB !important;
 		}
+
 
 		input[type="submit"].icon,
 		input[type="reset"].icon,

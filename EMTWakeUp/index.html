@@ -15,7 +15,7 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body class="is-loading">
+	<body class="is-loading" onload="hideReplayBtn()">
 
 
 		
@@ -37,11 +37,20 @@
 						</footer>
 					</section>
 					
-					<div>
-					<audio controls autoplay>
-					<source src="audio\EMTWakeupRingtone_mixdown.mp3">
+
+					<audio autoplay id="player">
+						<source src="audio\EMTWakeupRingtone_mixdown.mp3">
 					</audio>
-					</div>
+
+					
+				<section>
+					<ul class="icons">
+						<button id="replay" type="button" onclick="play()">Replay</button>
+					</ul>
+					<br>
+				</section>
+
+					
 				<!-- Footer -->
 					<footer id="footer">
 						<ul class="copyright">
@@ -59,6 +68,36 @@
 					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
 				}
 			</script>
+			
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+			<script>
+				player.addEventListener
+				(
+					"ended",
+					function()
+					{
+						//document.getElementById("replay").style.visibility='visible';
+						$("#replay").fadeIn("slow");
+					},
+					false
+				);
+			</script>
+			
+			<script>
+				function play()
+				{
+					player.play();
+					$("#replay").fadeOut("slow");
+				}
+			</script>
+			
+			<script>
+				function hideReplayBtn()
+				{
+					document.getElementById("replay").style.display='none';
+				}
+			</script>
+			
 			
 
 	</body>
