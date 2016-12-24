@@ -54,7 +54,9 @@
 					</section>
 					
 				<!-- Audio player -->
-					<audio src="/audio/Enya - Only Time.mp3" preload="auto" autoplay/>
+					<audio autoplay loop id="player">
+						<source src="audio\MANYO - Thin purple.mp3">
+					</audio>
 
 				<!-- Footer -->
 					<footer id="footer">
@@ -70,11 +72,12 @@
 			<script src="assets/js/skel.min.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
-			<script src="assets/js/audiojs/audio.min.js"></script>
 			<script>
-			audiojs.events.ready(function() {
-				var as = audiojs.createAll();
-			});
+			window.onload = function() {
+				var vid = document.getElementById("player");
+				vid.volume = 0.2;
+			};
 			</script>
+
 	</body>
 </html>
