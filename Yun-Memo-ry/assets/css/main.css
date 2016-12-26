@@ -123,6 +123,11 @@
 		font-size: 1em;
 		color: #aaa;
 	}
+	
+	/*hide the scrollbar*/
+	div::-webkit-scrollbar { 
+		display: block; 
+	}
 
 	a {
 		-moz-transition: color 0.25s ease, border-bottom-color 0.25s ease;
