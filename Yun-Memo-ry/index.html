@@ -23,6 +23,7 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-loading-0 is-loading-1 is-loading-2">
+	
 		<!-- Main -->
 			<div id="main">
 
@@ -63,8 +64,8 @@
 						</article>
 						<article>
 							<a class="thumbnail" href="images/fulls/06.jpg"><img src="images/thumbs/06.jpg" alt="" /></a>
-							<h2>????</h2>
-							<p>?????????????????</p>
+							<h2>寒假啦~</h2>
+							<p>經過一番期末苦戰，終於，寒假開始了的故事。</p>
 						</article>
 						<article>
 							<a class="thumbnail" href="images/fulls/07.jpg"><img src="images/thumbs/07.jpg" alt="" /></a>
@@ -73,11 +74,32 @@
 						</article>
 					</section>
 					
+					
 				<!-- Audio player -->
 					<audio autoplay loop id="player">
-						<source src="audio\MANYO - Thin purple.ogg">
+						<source id="audioSource" src="audio\広橋真紀子 - いのちの名前.ogg">
 					</audio>
+					
+				<!-- The Modal -->
+					<div id="magamiModal" class="modal">
+					
+						<span class="close" onclick="closeModal()">&times;</span>
 
+						<!-- Modal Content (The Image) -->
+						<img class="modal-content" src="images/magami.png">
+												
+						<div id="caption">
+							<button class="button" id="Btn" onclick = "scrolldown()"><span>馬上許願</span></button>
+						</div>
+					</div>	
+					
+					<div id="formsModal" class="modal">
+						<span class="close" onclick="closeModal()">&times;</span>
+						<br><br><br><br>
+						<div id="caption">
+							<iframe id="forms" src="https://docs.google.com/forms/d/e/1FAIpQLSfXsnVC5_CP7ZfuhFqfA9s1TtXMpvshbGy90pwlnoxG2dWN1A/viewform?embedded=true" width="500" height="600" frameborder="0" marginheight="0" marginwidth="0" style="display: block;">載入中…</iframe>
+						</div>
+					</div>
 				<!-- Footer -->
 					<footer id="footer">
 						<ul class="copyright">
@@ -93,11 +115,50 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 			<script>
-			window.onload = function()  {
-				var vid = document.getElementById("player");
-				vid.volume = 0.2;
-			};
+				var player = document.getElementById("player");
+				var audioSource = document.getElementById("audioSource");
+				var magamiModal = document.getElementById('magamiModal');
+				var formsModal = document.getElementById('formsModal');
+				var btn = document.getElementById("Btn");
+
+				// Get the <span> element that closes the modal
+				var span = document.getElementsByClassName("close");
+			
+				window.onload = function()  {
+					player.volume = 0.2;
+					
+					magamiModal.style.display = "block";
+				};
+
+				// When the user clicks the button, open the modal 
+				btn.onclick = function() {
+					magamiModal.style.display = "none";
+					formsModal.style.display = "block";
+				}
+				
+
+				// When the user clicks on <span> (x), close the modal
+				function closeModal() {
+					magamiModal.style.display = "none";
+					formsModal.style.display = "none";
+					audioSource.src = "audio\\MANYO - Thin purple.ogg";
+					player.load();
+					player.play();
+				}
+
+				// When the user clicks anywhere outside of the modal, close it
+				window.onclick = function(event) {
+					if (event.target == magamiModal ||event.target == formsModal) {
+						magamiModal.style.display = "none";
+						formsModal.style.display = "none";
+						
+						audioSource.src = "audio\\MANYO - Thin purple.ogg";
+						player.load();
+						player.play();
+					}
+				}
 			</script>
+			
 
 	</body>
 </html>
