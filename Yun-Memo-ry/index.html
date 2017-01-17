@@ -102,8 +102,10 @@
 								<textarea name="body"></textarea>
 								<br>
 								<input type="submit" value="許願">
+								<input type="hidden" name="_next" value="//site.io/thanks.html" />
+								<a href="jump.html" class="button">test</a>
 							</form>
-							<!-- <iframe id="forms" src="https://docs.google.com/forms/d/e/1FAIpQLSfXsnVC5_CP7ZfuhFqfA9s1TtXMpvshbGy90pwlnoxG2dWN1A/viewform?embedded=true" width="500" height="600" frameborder="0" marginheight="0" marginwidth="0" style="display: block;">載入中…</iframe> -->
+							
 						</div>
 					</div>
 					
@@ -135,7 +137,8 @@
 				window.onload = function()  {
 					player.volume = 0.2;
 					
-					magamiModal.style.display = "block";
+					if(location.hash!="#1")
+						magamiModal.style.display = "block";
 				};
 
 				// When the user clicks the button, open the modal 
