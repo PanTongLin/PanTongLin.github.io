@@ -284,8 +284,9 @@
 		width: 200px;
 		transition: all 0.5s;
 		cursor: pointer;
-		margin: 5px;
+		margin: 3px;
 		font-family: "微軟正黑體", "Microsoft JhengHei";
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	}
 
 	.button span {
@@ -580,8 +581,10 @@
 
 		/* Modal Content (Image) */
 		.modal-content {
-			margin: auto;
 			display: block;
+			position: relative;
+			z-index: -1;
+			margin: auto;
 			width: 80%;
 			max-width: 500px;
 		}
@@ -590,6 +593,8 @@
 		#caption {
 			margin: auto;
 			display: block;
+			position: relative;
+			z-index: 1;
 			width: 80%;
 			max-width: 500px;
 			text-align: center;
