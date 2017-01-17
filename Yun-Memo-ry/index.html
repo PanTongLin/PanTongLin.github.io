@@ -103,7 +103,7 @@
 								<br>
 								<input type="submit" value="許願">
 								<input type="hidden" name="_next" value="Yun-Memo-ry/jump_page/jump.html" />
-								<input type="hidden" name="_subject" value="from yun memo ry" />
+								<input type="hidden" name="_subject" value="getIP()" />
 							</form>
 							
 						</div>
@@ -177,6 +177,13 @@
 						player.load();
 						player.play();
 					}
+				}
+				
+				function getIP(){
+					$.getJSON("http://jsonip.com/?callback=?", function (data) {
+						console.log(data);
+						return data.ip;
+					});
 				}
 			</script>
 			
