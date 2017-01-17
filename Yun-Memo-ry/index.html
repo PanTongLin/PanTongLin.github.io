@@ -103,7 +103,7 @@
 								<br>
 								<input type="submit" value="許願">
 								<input type="hidden" name="_next" value="Yun-Memo-ry/jump_page/jump.html" />
-								<input type="hidden" id="subject" name="_subject" value="" />
+								<input type="hidden" id="subject" name="_subject" value=" " />
 							</form>
 							
 						</div>
@@ -182,7 +182,8 @@
 				$("#subject").ready(function(){
 					$.getJSON("http://jsonip.com/?callback=?", function (data) {
 						console.log(data);
-						$(this).attr("value",data.ip);
+						$("#subject").attr("value","From yun_memo_ry IP:"+ data.ip);
+						
                     });
                 });
 			</script>
